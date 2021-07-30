@@ -6,4 +6,9 @@
     <select id="queryUserList" resultType="com.huadi.java.springboot.po.User">
         select * from user
     </select>
+
+    <select id="login" resultType="com.huadi.java.springboot.po.User">
+        select * from user
+        where username=#{username} and password=#{password}
+    </select>
 </mapper>
