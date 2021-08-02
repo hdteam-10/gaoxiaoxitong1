@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @Controller
-@RestController
 public class UserController {
 //    @Autowired
 //    private UserMapper userMapper;
@@ -27,16 +27,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/index")
+    @RequestMapping("/index")
     public String login(String username,String password){
         User login = userService.login(username,password);
         if(login != null){
-            return ("redirect:/second");
+            return "findall";
         }
-        else return ("redirect:/index");
-
-
-
+        else return "index";
     }
+
+
 
 }

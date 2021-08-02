@@ -60,18 +60,19 @@ W e l c o m e  t o  O n l i n e  S e r v i c e  H a l l</pre>
                 dataType:"jsonp",
                 jsonpCallback:"successCallback",
                 data:{username:useNameVal,password:pswdVal},
-                // success:function(result){//后台返回result
-                //     console.log(result);
-                //     if(result=="0"){ //返回值为0表示账号与密码匹配正确
-                //         alert("恭喜登录成功！");
-                //         window.location.href="newFile.html";
-                //     }else{//否则匹配不正确，登录失败。
-                //         alert("抱歉，账号和密码不匹配！");
-                //     }
-                // },
-                // error:function(){
-                //     alert("对不起，请求出错！");
-                // }
+                success:function(result){//后台返回result
+                    alert(result)
+                    console.log(result);
+                    if(result=="true"){ //返回值为0表示账号与密码匹配正确
+                        alert("恭喜登录成功！");
+                        window.location.href="test.html";
+                    }else{//否则匹配不正确，登录失败。
+                        alert("抱歉，账号和密码不匹配！");
+                    }
+                },
+                error:function(){
+                    alert("对不起，请求出错！");
+                }
             });
         }
     })
