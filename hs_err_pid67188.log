@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 132120576 bytes for Failed to commit area from 0x0000000082200000 to 0x000000008a000000 of length 132120576.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (c:/BuildAgent/work/1eae4dac1d648407/src/hotspot/os/windows/os_windows.cpp:3296), pid=67188, tid=63072
+#
+# JRE version:  (11.0.6+8) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.6+8-b765.40, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+
+Host: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz, 12 cores, 7G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Tue Aug  3 15:55:15 2021 中国标准时间 elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000020006de7800):  JavaThread "Unknown thread" [_thread_in_vm, id=63072, stack(0x0000000c14e00000,0x0000000c14f00000)]
+
+Stack: [0x0000000c14e00000,0x0000000c14f00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5ddf9a]
+V  [jvm.dll+0x710ae5]
+V  [jvm.dll+0x712005]
+V  [jvm.dll+0x7126b3]
+V  [jvm.dll+0x23e718]
+V  [jvm.dll+0x5db444]
+V  [jvm.dll+0x5d0675]
+V  [jvm.dll+0x2faf1b]
+V  [jvm.dll+0x2fae8a]
+V  [jvm.dll+0x2fad62]
+V  [jvm.dll+0x2ffc36]
+V  [jvm.dll+0x3484e3]
+V  [jvm.dll+0x348be6]
+V  [jvm.dll+0x3485e3]
+V  [jvm.dll+0x2d5938]
+V  [jvm.dll+0x2d6ad7]
+V  [jvm.dll+0x6ef8a7]
+V  [jvm.dll+0x6f109c]
+V  [jvm.dll+0x355b29]
+V  [jvm.dll+0x6d4a7e]
+V  [jvm.dll+0x3bf053]
+V  [jvm.dll+0x3c15d1]
+C  [jli.dll+0x5363]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x0000020005331fa0, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x0000020006e01800 GCTaskThread "GC Thread#0" [stack: 0x0000000c14f00000,0x0000000c15000000] [id=54464]
+  0x0000020006e35800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000000c15000000,0x0000000c15100000] [id=57044]
+  0x0000020006e38000 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000000c15100000,0x0000000c15200000] [id=56312]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffe97a86047]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000020006de66f0] Heap_lock - owner thread: 0x0000020006de7800
+
+Heap address: 0x0000000082200000, size: 2014 MB, Compressed Oops mode: Non-zero based: 0x0000000082200000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.018 Loaded shared library D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\zip.dll
+Event: 0.018 Loaded shared library D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\jimage.dll
+
+
+Dynamic libraries:
+0x00007ff66fdc0000 - 0x00007ff66fdca000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\java.exe
+0x00007ffeebc30000 - 0x00007ffeebe25000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffeeb480000 - 0x00007ffeeb53d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffee9460000 - 0x00007ffee9729000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffee97b0000 - 0x00007ffee98b0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffee1470000 - 0x00007ffee1487000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\VCRUNTIME140.dll
+0x00007ffee1310000 - 0x00007ffee1329000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\jli.dll
+0x00007ffeeb540000 - 0x00007ffeeb6e0000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffee9b10000 - 0x00007ffee9b32000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffeeb190000 - 0x00007ffeeb1ba000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffee9a00000 - 0x00007ffee9b0b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffee98b0000 - 0x00007ffee994d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffed3b00000 - 0x00007ffed3d9a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffeea260000 - 0x00007ffeea2fe000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffeea180000 - 0x00007ffeea1b0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffed8e60000 - 0x00007ffed8efd000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\msvcp140.dll
+0x00007ffe977a0000 - 0x00007ffe9825d000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\server\jvm.dll
+0x00007ffeeb370000 - 0x00007ffeeb41c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffeea1b0000 - 0x00007ffeea24b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffee9de0000 - 0x00007ffee9f0a000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffee9db0000 - 0x00007ffee9db8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffecdc00000 - 0x00007ffecdc09000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffeebaa0000 - 0x00007ffeebb0b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffed10f0000 - 0x00007ffed1117000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffee8f00000 - 0x00007ffee8f0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffee7bf0000 - 0x00007ffee7c02000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffee1450000 - 0x00007ffee1461000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\verify.dll
+0x00007ffee78f0000 - 0x00007ffee7ad4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffecf260000 - 0x00007ffecf28c000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffee93d0000 - 0x00007ffee9453000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffede190000 - 0x00007ffede1b9000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\java.dll
+0x00007ffee1140000 - 0x00007ffee1158000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\zip.dll
+0x00007ffee1590000 - 0x00007ffee159b000 	D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1\jbr\;D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 2020.1.1;D:\java\java\2020Idea安装及破解\idea\IntelliJ IDEA 202;D:\java\java\2020Idea安装及破解\idea\IntelliJ IDE
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): D:/java/java/2020Idea安装及破解/idea/IntelliJ IDEA 2020.1.1/plugins/git4idea/lib/git4idea-rt.jar;D:/java/java/2020Idea安装及破解/idea/IntelliJ IDEA 2020.1.1/lib/xmlrpc-2.0.1.jar;D:/java/java/2020Idea安装及破解/idea/IntelliJ IDEA 2020.1.1/lib/commons-codec-1.14.jar;D:/java/java/2020Idea安装及破解/idea/IntelliJ IDEA 2020.1.1/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 132120576                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2111832064                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5836300                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122910970                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122910970                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_101
+PATH=D:\git\Git\mingw64\libexec\git-core;D:\git\Git\mingw64\libexec\git-core;D:\git\Git\mingw64\bin;D:\git\Git\usr\bin;C:\Users\张博宇\bin;C:\Program Files\Java\jdk1.8.0_101\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin;C:\Program Files\Common Files\Intel\WirelessCommon;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\java\java\tomcat\apache-tomcat-9.0.36\bin;D:\java\java\tomcat\apache-tomcat-9.0.36\lib;D:\git\Git\cmd;%MAVEN_HOME%\bin;C:\Users\张博宇\AppData\Local\Microsoft\WindowsApps
+USERNAME=张博宇
+DISPLAY=:0.0
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+
+CPU:total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 158 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 8051M (377M free)
+TotalPageFile size 21281M (AvailPageFile size 51M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 64M, peak: 190M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.6+8-b765.40) for windows-amd64 JRE (11.0.6+8-b765.40), built on Apr 20 2020 14:37:21 by "" with MS VC++ 14.0 (VS2015)
+
+END.
