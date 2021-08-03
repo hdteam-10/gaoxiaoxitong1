@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface TeamService {
     List<Team> findall();
+
+    void save(Team team);
+
+    void delete(int id);
 }

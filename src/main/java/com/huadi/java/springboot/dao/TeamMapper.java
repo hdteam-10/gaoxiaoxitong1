@@ -10,4 +10,8 @@ import java.util.List;
 @Repository
 public interface TeamMapper {
     List<Team> findall();
+
+    void save(Team team);
+
+    void delete(int id);
 }

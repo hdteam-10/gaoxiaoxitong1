@@ -31,7 +31,7 @@ public class UserController {
     public String login(String username,String password){
         User login = userService.login(username,password);
         if(login != null){
-            return "findall";
+            return "second";
         }
         else return "index";
     }

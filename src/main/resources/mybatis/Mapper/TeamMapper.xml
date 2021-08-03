@@ -3,7 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huadi.java.springboot.dao.TeamMapper">
+    <!--查询所有员工-->
     <select id="findall" resultType="com.huadi.java.springboot.po.Team">
         select * from team
     </select>
+
+    <!--添加一个员工-->
+    <insert id="save" parameterType="com.huadi.java.springboot.po.Team">
+        insert into team values(#{id},#{members},#{project},#{achievement})
+    </insert>
+
+    <!--删除一个员工-->
+    <delete id="delete" parameterType="int">
+        delete from team where id=#{id}
+    </delete>
 </mapper>

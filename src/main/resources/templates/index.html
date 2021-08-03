@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thyemleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Login</title>
-    <body background="img\h1_hero1.jpg">
+
+<body background="img\h1_hero1.jpg">
 <style type="text/css">
     .button {
-        background-color: #4CAF50; /* Green */
+        background-color: #4CAF50;
+        /* Green */
         border: none;
         color: white;
         padding: 15px 32px;
@@ -17,66 +17,90 @@
         display: inline-block;
         font-size: 16px;
     }
+
+    .login-pannel {
+        border-radius: 10px;
+        background-color: white;
+        position: absolute;
+        left: 60%;
+        top: 27%;
+        width: 400px;
+        height: 350px;
+        opacity: 75%;
+    }
+
+    .input-line .inputText {
+        border-width: 0;
+        height: 30px;
+        float: left;
+        margin-top: 15px;
+        margin-left: 75px;
+        width: 75%;
+    }
+
+    .input-line p {
+        width: 20%;
+        float: left;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        clear: left;
+        position: absolute;
+    }
+
+    div.input-line {
+        border-color: grey;
+        border-radius: 7px;
+        border-width: 1px;
+        border-style: solid;
+        position: relative;
+        height: 20%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
 </style>
 </head>
+
 <body>
-    <p>
-        <a href="https://www.uestc.edu.cn/">
-            <img src="img\logo.jfif" alt="logo" width="48" height="48"></a>
-        <I><font size="6">电子科技大学</font></I>
-    </p>
-    <div style="left: 12%; position: absolute; top:23%;font-weight:bold;font-size:50px">
-        科研创新服务平台
-    </div>
-    <div style="left: 8%; position: absolute; top:45%;font-size:20px"><pre>
+<p>
+    <a href="https://www.uestc.edu.cn/"> <img src="img\logo.jfif" alt="logo" width="48" height="48"></a>
+    <I>
+        <font size="6">电子科技大学</font>
+    </I>
+</p>
+<div style="left: 12%; position: absolute; top: 23%; font-weight: bold; font-size: 50px">
+    科研创新服务平台</div>
+<div style="left: 8%; position: absolute; top: 45%; font-size: 20px">
+        <pre>
 W e l c o m e  t o  O n l i n e  S e r v i c e  H a l l</pre>
-    </div>
-    <div style="opacity:1;position:absolute;left:60%;top:27%; width:400px;height:350px;background-color:#FFFFFF">
-    </div>
-    <div style="left: 68%; position: absolute; top:30%;font-weight:bold;font-size:40px">
-        LOGIN
-    </div>
-    <div style="left: 62%; position: absolute; top:45%;font-size:20px">
-        用户名<br> <input type="text"  class="inputText"><br>
-        密码 <br><input type="password"  class="inputText"><br>
-        <input type="button" class="inputBtn" value="登录">
-    </div>
+</div>
 
-<script>
 
-    $(function(){
-        var btn = $("input").eq(2);
-        btn.click(function(){
-            var useNameVal = $("input").eq(0).val();
-            var pswdVal = $("input").eq(1).val();//点击事件先获取input输入框中的值
-            findUser(useNameVal,pswdVal);//调用下面的findUser函数，里面传参数：userName和password.
-        })
-        function findUser(useNameVal,pswdVal){
 
-            $.ajax({
-                type:"post",
-                url:"/index",
-                async:true,
-                dataType:"jsonp",
-                jsonpCallback:"successCallback",
-                data:{username:useNameVal,password:pswdVal},
-                success:function(result){//后台返回result
-                    alert(result)
-                    console.log(result);
-                    if(result=="true"){ //返回值为0表示账号与密码匹配正确
-                        alert("恭喜登录成功！");
-                        window.location.href="test.html";
-                    }else{//否则匹配不正确，登录失败。
-                        alert("抱歉，账号和密码不匹配！");
-                    }
-                },
-                error:function(){
-                    alert("对不起，请求出错！");
-                }
-            });
-        }
-    })
-</script>
+<div style="left: 62%; position: absolute; top:45%;font-size:20px">
+    <form th:action="@{/index}" method="post">
+        <div class="login-pannel">
+            <div style="left: 10%; position: relative; top: 10%; font-weight: bold; font-size: 40px; font-family:'Courier New', Courier, monospace">
+                LOGIN</div>
+            <div style="left: 10%; position: relative; top: 25%; font-size: 20px; width:80%;height:75%">
+                <div class="input-line">
+                    <p class="input-pref">用户名</p> <input type="text" class="inputText" name="username">
+                </div>
+                <div class="input-line">
+                    <p class="input-pref">登陆</p>
+                    <input type="password" class="inputText" name="password">
+                </div>
+            </div>
+            <input type="submit" class="inputBtn" value="登录" style="width: 100px; height:40px; font-size:large;background:skyblue;border-width: 1px;
+	position: inherit; top:80%;left:10%;opacity: 1;">
+        </div>
+    </form>
+</div>
+
+
 </body>
 
 </html>
+
+
+
+
